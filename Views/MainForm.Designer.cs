@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
+            button13 = new Button();
+            button11 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -46,7 +48,9 @@
             buttonMno = new Button();
             buttonDzi = new Button();
             buttonClear = new Button();
+            button10 = new Button();
             buttonSum = new Button();
+            button12 = new Button();
             textBoxResult = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -76,6 +80,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.Controls.Add(button13, 0, 4);
+            tableLayoutPanel2.Controls.Add(button11, 2, 3);
             tableLayoutPanel2.Controls.Add(button3, 2, 0);
             tableLayoutPanel2.Controls.Add(button2, 1, 0);
             tableLayoutPanel2.Controls.Add(button1, 0, 0);
@@ -91,26 +97,56 @@
             tableLayoutPanel2.Controls.Add(buttonMno, 3, 2);
             tableLayoutPanel2.Controls.Add(buttonDzi, 3, 3);
             tableLayoutPanel2.Controls.Add(buttonClear, 0, 3);
-            tableLayoutPanel2.Controls.Add(buttonSum, 2, 3);
+            tableLayoutPanel2.Controls.Add(button10, 3, 4);
+            tableLayoutPanel2.Controls.Add(buttonSum, 2, 4);
+            tableLayoutPanel2.Controls.Add(button12, 1, 4);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 103);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 4;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25.0006237F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25.0006275F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25.0006218F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 24.998127F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.RowCount = 5;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20.0004959F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20.0005016F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20.0004978F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 19.9985027F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel2.Size = new Size(900, 602);
             tableLayoutPanel2.TabIndex = 1;
+            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
+            // 
+            // button13
+            // 
+            button13.BackColor = Color.DarkRed;
+            button13.Dock = DockStyle.Fill;
+            button13.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            button13.Location = new Point(3, 483);
+            button13.Name = "button13";
+            button13.Size = new Size(219, 116);
+            button13.TabIndex = 21;
+            button13.Text = "CLOSE APP";
+            button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
+            // 
+            // button11
+            // 
+            button11.Cursor = Cursors.Hand;
+            button11.Dock = DockStyle.Fill;
+            button11.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button11.Location = new Point(453, 363);
+            button11.Name = "button11";
+            button11.Size = new Size(219, 114);
+            button11.TabIndex = 19;
+            button11.Text = "00";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // button3
             // 
+            button3.Cursor = Cursors.Hand;
             button3.Dock = DockStyle.Fill;
             button3.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button3.Location = new Point(453, 3);
             button3.Name = "button3";
-            button3.Size = new Size(219, 144);
+            button3.Size = new Size(219, 114);
             button3.TabIndex = 2;
             button3.Text = "3";
             button3.UseVisualStyleBackColor = true;
@@ -119,11 +155,12 @@
             // button2
             // 
             button2.BackColor = SystemColors.ButtonHighlight;
+            button2.Cursor = Cursors.Hand;
             button2.Dock = DockStyle.Fill;
             button2.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button2.Location = new Point(228, 3);
             button2.Name = "button2";
-            button2.Size = new Size(219, 144);
+            button2.Size = new Size(219, 114);
             button2.TabIndex = 1;
             button2.Text = "2";
             button2.UseVisualStyleBackColor = false;
@@ -131,11 +168,12 @@
             // 
             // button1
             // 
+            button1.Cursor = Cursors.Hand;
             button1.Dock = DockStyle.Fill;
             button1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
-            button1.Size = new Size(219, 144);
+            button1.Size = new Size(219, 114);
             button1.TabIndex = 0;
             button1.Text = "1";
             button1.UseVisualStyleBackColor = true;
@@ -143,11 +181,12 @@
             // 
             // button4
             // 
+            button4.Cursor = Cursors.Hand;
             button4.Dock = DockStyle.Fill;
             button4.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button4.Location = new Point(3, 153);
+            button4.Location = new Point(3, 123);
             button4.Name = "button4";
-            button4.Size = new Size(219, 144);
+            button4.Size = new Size(219, 114);
             button4.TabIndex = 3;
             button4.Text = "4";
             button4.UseVisualStyleBackColor = true;
@@ -155,11 +194,12 @@
             // 
             // button5
             // 
+            button5.Cursor = Cursors.Hand;
             button5.Dock = DockStyle.Fill;
             button5.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button5.Location = new Point(228, 153);
+            button5.Location = new Point(228, 123);
             button5.Name = "button5";
-            button5.Size = new Size(219, 144);
+            button5.Size = new Size(219, 114);
             button5.TabIndex = 4;
             button5.Text = "5";
             button5.UseVisualStyleBackColor = true;
@@ -167,11 +207,12 @@
             // 
             // button6
             // 
+            button6.Cursor = Cursors.Hand;
             button6.Dock = DockStyle.Fill;
             button6.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button6.Location = new Point(453, 153);
+            button6.Location = new Point(453, 123);
             button6.Name = "button6";
-            button6.Size = new Size(219, 144);
+            button6.Size = new Size(219, 114);
             button6.TabIndex = 5;
             button6.Text = "6";
             button6.UseVisualStyleBackColor = true;
@@ -179,11 +220,12 @@
             // 
             // button7
             // 
+            button7.Cursor = Cursors.Hand;
             button7.Dock = DockStyle.Fill;
             button7.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button7.Location = new Point(3, 303);
+            button7.Location = new Point(3, 243);
             button7.Name = "button7";
-            button7.Size = new Size(219, 144);
+            button7.Size = new Size(219, 114);
             button7.TabIndex = 6;
             button7.Text = "7";
             button7.UseVisualStyleBackColor = true;
@@ -191,11 +233,12 @@
             // 
             // button8
             // 
+            button8.Cursor = Cursors.Hand;
             button8.Dock = DockStyle.Fill;
             button8.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button8.Location = new Point(228, 303);
+            button8.Location = new Point(228, 243);
             button8.Name = "button8";
-            button8.Size = new Size(219, 144);
+            button8.Size = new Size(219, 114);
             button8.TabIndex = 7;
             button8.Text = "8";
             button8.UseVisualStyleBackColor = true;
@@ -203,11 +246,12 @@
             // 
             // button9
             // 
+            button9.Cursor = Cursors.Hand;
             button9.Dock = DockStyle.Fill;
             button9.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button9.Location = new Point(453, 303);
+            button9.Location = new Point(453, 243);
             button9.Name = "button9";
-            button9.Size = new Size(219, 144);
+            button9.Size = new Size(219, 114);
             button9.TabIndex = 8;
             button9.Text = "9";
             button9.UseVisualStyleBackColor = true;
@@ -215,11 +259,12 @@
             // 
             // button0
             // 
+            button0.Cursor = Cursors.Hand;
             button0.Dock = DockStyle.Fill;
             button0.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button0.Location = new Point(228, 453);
+            button0.Location = new Point(228, 363);
             button0.Name = "button0";
-            button0.Size = new Size(219, 146);
+            button0.Size = new Size(219, 114);
             button0.TabIndex = 9;
             button0.Text = "0";
             button0.UseVisualStyleBackColor = true;
@@ -228,11 +273,12 @@
             // buttonAdd
             // 
             buttonAdd.BackColor = Color.LawnGreen;
+            buttonAdd.Cursor = Cursors.Hand;
             buttonAdd.Dock = DockStyle.Fill;
             buttonAdd.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
             buttonAdd.Location = new Point(678, 3);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(219, 144);
+            buttonAdd.Size = new Size(219, 114);
             buttonAdd.TabIndex = 10;
             buttonAdd.Text = "+";
             buttonAdd.UseVisualStyleBackColor = false;
@@ -241,11 +287,12 @@
             // buttonMinus
             // 
             buttonMinus.BackColor = Color.IndianRed;
+            buttonMinus.Cursor = Cursors.Hand;
             buttonMinus.Dock = DockStyle.Fill;
             buttonMinus.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonMinus.Location = new Point(678, 153);
+            buttonMinus.Location = new Point(678, 123);
             buttonMinus.Name = "buttonMinus";
-            buttonMinus.Size = new Size(219, 144);
+            buttonMinus.Size = new Size(219, 114);
             buttonMinus.TabIndex = 11;
             buttonMinus.Text = "-";
             buttonMinus.UseVisualStyleBackColor = false;
@@ -254,11 +301,12 @@
             // buttonMno
             // 
             buttonMno.BackColor = Color.PaleTurquoise;
+            buttonMno.Cursor = Cursors.Hand;
             buttonMno.Dock = DockStyle.Fill;
             buttonMno.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonMno.Location = new Point(678, 303);
+            buttonMno.Location = new Point(678, 243);
             buttonMno.Name = "buttonMno";
-            buttonMno.Size = new Size(219, 144);
+            buttonMno.Size = new Size(219, 114);
             buttonMno.TabIndex = 12;
             buttonMno.Text = "*";
             buttonMno.UseVisualStyleBackColor = false;
@@ -267,11 +315,12 @@
             // buttonDzi
             // 
             buttonDzi.BackColor = SystemColors.ControlDarkDark;
+            buttonDzi.Cursor = Cursors.Hand;
             buttonDzi.Dock = DockStyle.Fill;
             buttonDzi.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonDzi.Location = new Point(678, 453);
+            buttonDzi.Location = new Point(678, 363);
             buttonDzi.Name = "buttonDzi";
-            buttonDzi.Size = new Size(219, 146);
+            buttonDzi.Size = new Size(219, 114);
             buttonDzi.TabIndex = 13;
             buttonDzi.Text = "/";
             buttonDzi.UseVisualStyleBackColor = false;
@@ -280,27 +329,56 @@
             // buttonClear
             // 
             buttonClear.BackColor = Color.Red;
+            buttonClear.Cursor = Cursors.Hand;
             buttonClear.Dock = DockStyle.Fill;
-            buttonClear.Location = new Point(3, 453);
+            buttonClear.Location = new Point(3, 363);
             buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(219, 146);
+            buttonClear.Size = new Size(219, 114);
             buttonClear.TabIndex = 15;
             buttonClear.Text = "x";
             buttonClear.UseVisualStyleBackColor = false;
             buttonClear.Click += buttonClear_Click;
             // 
+            // button10
+            // 
+            button10.BackColor = SystemColors.ActiveCaption;
+            button10.Cursor = Cursors.Hand;
+            button10.Dock = DockStyle.Fill;
+            button10.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button10.Location = new Point(678, 483);
+            button10.Name = "button10";
+            button10.Size = new Size(219, 116);
+            button10.TabIndex = 14;
+            button10.Text = ",";
+            button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
+            // 
             // buttonSum
             // 
             buttonSum.BackColor = Color.PeachPuff;
+            buttonSum.Cursor = Cursors.Hand;
             buttonSum.Dock = DockStyle.Fill;
             buttonSum.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonSum.Location = new Point(453, 453);
+            buttonSum.Location = new Point(453, 483);
             buttonSum.Name = "buttonSum";
-            buttonSum.Size = new Size(219, 146);
+            buttonSum.Size = new Size(219, 116);
             buttonSum.TabIndex = 14;
             buttonSum.Text = "=";
             buttonSum.UseVisualStyleBackColor = false;
             buttonSum.Click += buttonSum_Click;
+            // 
+            // button12
+            // 
+            button12.BackColor = SystemColors.AppWorkspace;
+            button12.Dock = DockStyle.Fill;
+            button12.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button12.Location = new Point(228, 483);
+            button12.Name = "button12";
+            button12.Size = new Size(219, 116);
+            button12.TabIndex = 20;
+            button12.Text = "VIEW ON GITHUB";
+            button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
             // 
             // textBoxResult
             // 
@@ -349,5 +427,9 @@
         private Button button4;
         private Button button7;
         private Button buttonClear;
+        private Button button10;
+        private Button button11;
+        private Button button13;
+        private Button button12;
     }
 }
